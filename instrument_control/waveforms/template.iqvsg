@@ -1,0 +1,1 @@
+<LPHeader version="0.3"><General><Description>Python generated waveform.</Description><FileType>LitePoint VSG waveform file</FileType><DateTime>[[datetime]]</DateTime></General><DataInfo><SamplingRate>[[sample_rate]]</SamplingRate><SampleCount>[[sample_count]]</SampleCount></DataInfo></LPHeader>

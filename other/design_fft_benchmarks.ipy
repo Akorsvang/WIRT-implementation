@@ -1,0 +1,16 @@
+import numpy as np
+import pyfftw
+pyfftw.interfaces.cache.enable()
+
+for N in [524, 625, 800, 1000, 1024, 1250, 2000, 2500]:
+    print(N)
+
+    a = np.random.rand(N) + 1j * np.random.rand(N)
+    b = pyfftw.empty_aligned(N, dtype='complex128')
+    b[:] = a.copy()
+
+    %timeit -r20 -n100000 np.fft.fft(a)
+    %timeit -r20 -n100000 np.fft.fft(b)
+    %timeit -r20 -n100000 pyfftw.interfaces.numpy_fft.fft(a)
+    %timeit -r20 -n100000 pyfftw.interfaces.numpy_fft.fft(b)
+
